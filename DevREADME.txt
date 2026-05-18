@@ -1,0 +1,3 @@
+- Use DB Browser for SQLite to manage geocache database
+- Images stored in static\uploads
+- Run with 'python app.py' - Flask will provide loopback IP on port 5000 for viewing.

@@ -1,0 +1,37 @@
+ <!doctype html?
+ <html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Geocaching Log</title>
+    </head>
+    <body>
+        <h1>My Geocaching Log</h1>
+        <p>Welcome! Here are some example geocaches</p>
+
+        <ul>
+            {# Jinja comment: this is not sent to the browser #}
+            {% for cache in geocaches %}
+                <li>
+                    <strong>{{ cache.name }}</strong><br>
+                    Coordinates: {{ cache.latitude }}, {{ cache.longitude }}<br>
+                    Date: {{ cache.found_date }}<br>
+                    Notes: {{ cache.notes }}
+                    
+                    {% if cache.image_filename %}
+                        <div>
+                            <img
+                                src="{{ url_for('static', filename='uploads/' ~ cache.image_filename) }}"
+                                alt="Photo of {{ cache.name }}"
+                                style="max-width: 300px; height: auto;"
+                            >
+                        </div>
+                    {% endif %}
+                    <p><a href="{{ url_for('add_cache') }}">Add a cache</a></p>
+                </li>
+            {% else %}
+                <li>No geocaches yet. Add one!</li>
+                <p><a href="{{ url_for('add_cache') }}">Add a cache</a></p>
+            {% endfor %}
+        </ul>
+    </body>
+ </html>

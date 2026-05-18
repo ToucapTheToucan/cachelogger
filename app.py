@@ -19,7 +19,7 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024 # 16 MB max file size
 
 # sqlalchemy_database_uri represents where the database lives
-# sqlite:////geocaches.db means that we're using sqlite and stroing data in geoches.db
+# sqlite:////geocaches.db means that we're using sqlite and storing data in geocaches.db
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///geocaches.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
